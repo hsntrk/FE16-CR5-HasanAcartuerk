@@ -108,8 +108,8 @@ class Dog extends Animal {
     }
 }
 const array = [];
-new Animal("img/rabbit.jpg", "Ripku", 4, "male", "small", true);
-new Animal("img/budgie.jpg", "Buki", 3, "female", "small", false);
+new Animal("img/rabbit.jpg", "Ripku", 5, "male", "small", true);
+new Animal("img/budgie.jpg", "Buki", 5, "female", "small", false);
 new Dog("img/dog_bullterrier.jpg", "Tiko", 6, "male", "large", true, "Bull Terrier", "Yes");
 new Dog("img/dog_kangal.jpg", "Kando", 7, "male", "large", false, "Shepherd dog", "Yes");
 new Dog("img/dog_chihuahua.jpg", "Cukomi", 5, "female", "medium", false, "Chihuahua dog", "No");
