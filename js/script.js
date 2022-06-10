@@ -14,7 +14,7 @@ class Animal {
         return `
     <div class="col rounded">
         <div class="card shadow-lg">
-            <img src="${this.image}" class="card-img-top" alt="...">
+            <img src="${this.image}" class="card-img-top d-none d-md-block" alt="...">
             <div class="bg-dark">
                 <h3 class="card-title text-light text-center cardtitle">${this.name}</h3>
             </div>
@@ -54,7 +54,7 @@ class Cat extends Animal {
         return `
     <div class="col rounded">
         <div class="card shadow-lg">
-            <img src="${this.image}" class="card-img-top" alt="...">
+            <img src="${this.image}" class="card-img-top d-none d-md-block" alt="...">
             <div class="bg-dark">
                 <h3 class="card-title text-light text-center cardtitle">${this.name}</h3>
             </div>
@@ -86,7 +86,7 @@ class Dog extends Animal {
         return `
     <div class="col rounded">
         <div class="card shadow-lg">
-            <img src="${this.image}" class="card-img-top" alt="...">
+            <img src="${this.image}" class="card-img-top d-none d-md-block" alt="...">
             <div class="bg-dark">
                 <h3 class="card-title text-light text-center cardtitle">${this.name}</h3>
             </div>
