@@ -15,7 +15,7 @@ class Animal {
     this.vaccine = vaccine;
     array.push(this);
   }
-
+  // used Javascript Ternary Operator for vaccine boolean inside display method
   display() {
     return `
     <div class="col rounded">
@@ -29,11 +29,26 @@ class Animal {
                 <p class="card-text cardtitle">Age: ${this.age} </p>
                 <p class="card-text cardtitle">Size: ${this.size}</p>
             </div>
-            <button type="button" class="btn btn-success rounded-pill cardtitle">Vaccine: ${this.vaccine} </button>
+            <button onclick="changeColorBtn(this)" type="button" class="btn : ${
+              this.vaccine ? `btn-success` : `btn-danger`
+            } rounded-pill cardtitle myBtns" id="btnColor">Vaccine: 
+             ${this.vaccine ? `<i class="fa-regular fa-circle-check"></i>` : `<i class="fa-regular fa-file-excel"></i>`}  </button>
         </div>
     </div>
 
 `;
+  }
+}
+
+// created onclick function inside parent class to change color button located in button tag
+function changeColorBtn(button) {
+  if (button.classList.contains("btn-danger")) {
+    button.classList.replace("btn-danger", "btn-success");
+    // console.log(button.children);
+    button.children[0].classList.replace("fa-file-excel", "fa-circle-check");
+  } else {
+    button.classList.replace("btn-success", "btn-danger");
+    button.children[0].classList.replace("fa-circle-check", "fa-file-excel");
   }
 }
 
@@ -60,7 +75,10 @@ class Cat extends Animal {
                 <p class="card-text cardtitle">Age: ${this.age} </p>
                 <p class="card-text cardtitle">Size: ${this.size}</p>
             </div>
-            <button type="button" class="btn btn-success rounded-pill cardtitle">Vaccine: ${this.vaccine} </button>
+              <button onclick="changeColorBtn(this)" type="button" class="btn : ${
+                this.vaccine ? `btn-success` : `btn-danger`
+              } rounded-pill cardtitle myBtns" id="btnColor">Vaccine: 
+             ${this.vaccine ? `<i class="fa-regular fa-circle-check"></i>` : `<i class="fa-regular fa-file-excel"></i>`}  </button>
             <div class="card-body">
                 <p class="card-text cardtitle">Breed: ${this.breed}</p>
                 <p class="card-text cardtitle">Fur color: ${this.furcolor} </p>
@@ -81,6 +99,7 @@ class Dog extends Animal {
     this.breed = breed;
     this.training = training;
   }
+
   display() {
     return `
     <div class="col rounded">
@@ -94,7 +113,10 @@ class Dog extends Animal {
                 <p class="card-text cardtitle">Age: ${this.age} </p>
                 <p class="card-text cardtitle">Size: ${this.size}</p>
             </div>
-            <button type="button" class="btn btn-success rounded-pill cardtitle">Vaccine: ${this.vaccine} </button>
+             <button onclick="changeColorBtn(this)" type="button" class="btn : ${
+               this.vaccine ? `btn-success` : `btn-danger`
+             } rounded-pill cardtitle myBtns" id="btnColor">Vaccine: 
+             ${this.vaccine ? `<i class="fa-regular fa-circle-check"></i>` : `<i class="fa-regular fa-file-excel"></i>`}  </button>
             <div class="card-body">
                 <p class="card-text cardtitle">Breed: ${this.breed}</p>
                 <p class="card-text cardtitle">Training: ${this.training} </p>
@@ -108,9 +130,9 @@ class Dog extends Animal {
 
 const array: Array<Animal> = [];
 
-new Animal("img/rabbit.jpg", "Ripku", 2, "male", "small", true);
+new Animal("img/rabbit.jpg", "Ripku", 4, "male", "small", true);
 new Animal("img/budgie.jpg", "Buki", 3, "female", "small", false);
-new Dog("img/dog_bullterrier.jpg", "Tiko", 4, "male", "large", true, "Bull Terrier", "Yes");
+new Dog("img/dog_bullterrier.jpg", "Tiko", 6, "male", "large", true, "Bull Terrier", "Yes");
 new Dog("img/dog_kangal.jpg", "Kando", 7, "male", "large", false, "Shepherd dog", "Yes");
 new Dog("img/dog_chihuahua.jpg", "Cukomi", 5, "female", "medium", false, "Chihuahua dog", "No");
 new Dog("img/dog_zwergspitz.jpg", "Akipa", 3, "female", "medium", true, "Spitz dog", "No");
@@ -120,4 +142,3 @@ new Cat("img/cat_sibirian.jpg", "Sibash", 4, "female", "medium", false, "Siberia
 for (let val of array) {
   (document.getElementById("cards-content") as HTMLElement).innerHTML += val.display();
 }
-
