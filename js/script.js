@@ -116,6 +116,18 @@ new Dog("img/dog_chihuahua.jpg", "Cukomi", 5, "female", "medium", false, "Chihua
 new Dog("img/dog_zwergspitz.jpg", "Akipa", 3, "female", "medium", true, "Spitz dog", "No");
 new Cat("img/cat_persian.jpg", "Fusly", 2, "male", "medium", true, "Persian Longhair Cat", "Grey", "https://en.wikipedia.org/wiki/Persian_cat");
 new Cat("img/cat_sibirian.jpg", "Sibash", 4, "female", "medium", false, "Siberian Cat", "brown", "https://www.petfinder.com/cat-breeds/siberian/");
-for (let val of array) {
-    document.getElementById("cards-content").innerHTML += val.display();
+function updateArray() {
+    const kartenArray = document.getElementById("cards-content");
+    kartenArray.innerHTML = "";
+    array.forEach((val) => {
+        kartenArray.innerHTML += val.display();
+    });
+}
+updateArray();
+document.getElementById("btn-sort-age").addEventListener("click", sortByAge);
+function sortByAge() {
+    array.sort(function (a, b) {
+        return a.age - b.age;
+    });
+    updateArray();
 }
