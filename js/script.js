@@ -1,23 +1,16 @@
+"use strict";
 class Animal {
-  image: string;
-  name: string;
-  age: number;
-  gender: string;
-  size: string;
-  vaccine: boolean;
-
-  constructor(image: string, name: string, age: number, gender: string, size: string, vaccine: boolean) {
-    this.image = image;
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
-    this.size = size;
-    this.vaccine = vaccine;
-    array.push(this);
-  }
-
-  display() {
-    return `
+    constructor(image, name, age, gender, size, vaccine) {
+        this.image = image;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.size = size;
+        this.vaccine = vaccine;
+        array.push(this);
+    }
+    display() {
+        return `
     <div class="col rounded">
         <div class="card shadow-lg">
             <img src="${this.image}" class="card-img-top" alt="...">
@@ -34,21 +27,17 @@ class Animal {
     </div>
 
 `;
-  }
+    }
 }
-
 class Cat extends Animal {
-  breed: string;
-  furcolor: string;
-  url: string;
-  constructor(image: string, name: string, age: number, gender: string, size: string, vaccine: boolean, breed: string, furcolor: string, url: string) {
-    super(image, name, age, gender, size, vaccine);
-    this.breed = breed;
-    this.furcolor = furcolor;
-    this.url = url;
-  }
-  display() {
-    return `
+    constructor(image, name, age, gender, size, vaccine, breed, furcolor, url) {
+        super(image, name, age, gender, size, vaccine);
+        this.breed = breed;
+        this.furcolor = furcolor;
+        this.url = url;
+    }
+    display() {
+        return `
     <div class="col rounded">
         <div class="card shadow-lg">
             <img src="${this.image}" class="card-img-top" alt="...">
@@ -70,19 +59,16 @@ class Cat extends Animal {
     </div>
 
 `;
-  }
+    }
 }
-
 class Dog extends Animal {
-  breed: string;
-  training: string;
-  constructor(image: string, name: string, age: number, gender: string, size: string, vaccine: boolean, breed: string, training: string) {
-    super(image, name, age, gender, size, vaccine);
-    this.breed = breed;
-    this.training = training;
-  }
-  display() {
-    return `
+    constructor(image, name, age, gender, size, vaccine, breed, training) {
+        super(image, name, age, gender, size, vaccine);
+        this.breed = breed;
+        this.training = training;
+    }
+    display() {
+        return `
     <div class="col rounded">
         <div class="card shadow-lg">
             <img src="${this.image}" class="card-img-top" alt="...">
@@ -103,11 +89,9 @@ class Dog extends Animal {
     </div>
 
 `;
-  }
+    }
 }
-
-const array: Array<Animal> = [];
-
+const array = [];
 new Animal("img/rabbit.jpg", "Ripku", 2, "male", "small", true);
 new Animal("img/budgie.jpg", "Buki", 3, "female", "small", false);
 new Dog("img/dog_bullterrier.jpg", "Tiko", 4, "male", "large", true, "Bull Terrier", "Yes");
@@ -116,8 +100,6 @@ new Dog("img/dog_chihuahua.jpg", "Cukomi", 5, "female", "medium", false, "Chihua
 new Dog("img/dog_zwergspitz.jpg", "Akipa", 3, "female", "medium", true, "Spitz dog", "No");
 new Cat("img/cat_persian.jpg", "Fusly", 2, "male", "medium", true, "Persian Longhair Cat", "Grey", "https://en.wikipedia.org/wiki/Persian_cat");
 new Cat("img/cat_sibirian.jpg", "Sibash", 4, "female", "medium", false, "Siberian Cat", "brown", "https://www.petfinder.com/cat-breeds/siberian/");
-
 for (let val of array) {
-  (document.getElementById("cards-content") as HTMLElement).innerHTML += val.display();
+    document.getElementById("cards-content").innerHTML += val.display();
 }
-
