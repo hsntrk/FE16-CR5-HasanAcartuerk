@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- fontawesome kit icons -->
+    <script src="https://kit.fontawesome.com/eedc6ffb6a.js" crossorigin="anonymous"></script>
+
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+    <!-- my style css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Pet Shop</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark colorturkislight">
+        <div class="container-fluid text-align-center">
+            <a href="#" class="navbar-brand navbar-dark colorturkislight ms-3"><i class="fa-solid fa-paw"></i> Pet Shop</a>
+
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse text-align-center d-flex justify-content-between align-items-center" id="navmenu">
+                <ul class="navbar-nav navbar-dark align-items-center">
+                    <li class="nav-item"><a href="index.html" class="nav-link colorturkislight">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link colorturkislight">About Us</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link colorturkislight">Services</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link colorturkislight">Age <button type="button" class="btn btn-outline-secondary btn-sm btn-prio"><i class="fa-solid fa-arrow-down-short-wide"></i></button></a></li>
+                </ul>
+                <div class="d-lg-flex justify-content-around align-items-center">
+                    <label for="exampleFormControlInput1" class="form-label colorturkislight m-3"></label>
+                    <input type="email" class="form-control m-3" id="exampleFormControlInput1" placeholder="Search">
+                    <button class="btn bgturkislight m-3">Search</button>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- head section background image  -->
+    <div class="back-pic d-flex justify-content-center align-items-center" style="background-image: url(img/background.jpg);">
+    </div>
+
+
+    <!-- Card Top Section Title, cards will generated with in typescript   -->
+
+    <div class="container bg-transparent">
+        <div class="container-fluid">
+            <div class="d-flex flex-row justify-content-center m-4 cardtitle">
+                <h3>Get to know our friends</h3>
+            </div>
+
+            <!-- card animals dynamically created in typescript -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-1" id="cards-content">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- social media icons -->
+    <div class="container-fluid pb-1 bgturkislight">
+        <div class="container">
+            <div class="justify-content-center align-items-center">
+                <div class="m-1 p-1 d-lg-flex justify-content-center">
+                    <button type="button" class="btn m-1"><i class="fa-brands fa-facebook"></i></button>
+                    <button type="button" class="btn m-1"><i class="fa-brands fa-twitter"></i></button>
+                    <button type="button" class="btn m-1"><i class="fa-brands fa-google"></i></button>
+                    <button type="button" class="btn m-1"><i class="fa-brands fa-instagram"></i></button>
+                    <button type="button" class="btn m-1"><i class="fa-brands fa-linkedin"></i></i></button>
+                    <button type="button" class="btn m-1"><i class="fa-brands fa-github"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="navbar navbar-expand-lg bg-info">
+        <div class="container d-flex justify-content-center">
+            <p class="text-dark m-0">&copy 2022 Copyright: Hasan Acartürk</p>
+        </div>
+
+    </footer>
+
+
+
+    <!-- bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <!-- my script js -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
